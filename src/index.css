@@ -13,3 +13,8 @@
   border: 2px solid blue;
   margin: 20px auto;
 }
+
+#myMac{
+  background: url('https://www.paragon-software.com/wp-content/uploads/2017/09/macbook-pro-ntfs-mac.png');
+  min-height: 200px;
+}

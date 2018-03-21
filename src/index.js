@@ -104,7 +104,7 @@ ReactDOM.render(
 //MEGA SUCCESS!!! Not only did I render it, but I found a way to render, multiple objects into 1 element, by using arrays. LOOK AT THE EXAMPLE BELOW!
 
   let weather = <h3>'This Weather is crazy. Watch out!'</h3>;
-  ReactDOM.render([topDescription, weather, name], document.getElementById('root'));
+  ReactDOM.render([topDescription, weather], document.getElementById('root'));
 
 
 //COMBINING A FUNCTION WITH JSX STOCK EXAMPLE:
@@ -121,6 +121,24 @@ ReactDOM.render(
   }
 
   setInterval(tick, 1000);
+
+//CREATING A COMPONENT AND DEFINING AN ELEMENT FOR IT:
+//SUCCESS: Although, I wasn't able to create an id within it and call it in css. I also got some kind of warning about having a unique key prop. Look into it.
+
+class Machines extends React.Component{
+  render(){
+    return <h2>This Machine is {this.props.jay}</h2>
+  }
+}
+
+let machines = (
+  <Machines jay="myMac"/>
+)
+
+ReactDOM.render(
+  machines,
+  document.getElementById('mac')
+)
 
 
 

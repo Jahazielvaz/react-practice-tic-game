@@ -212,10 +212,14 @@ Conceptually, components are like JS  functions. They accept arbitrary inputs (c
         }
       }
 
-      NOTE: While the 2 components above are equivalent to React, using classes gives you additional features which will be discussed later. 
+      NOTE: While the 2 components above are equivalent to React, using classes gives you additional features which will be discussed later.
 
     RENDERING THIS FUNCTIONAL COMPONENT: Previously, we only encountered React elements that represent DOM tags, However, elements can also represent user-defined components
       EXAMPLE:
+        const element = <div/>  //Dom tags
+
+        const element = <Welcome = name="Sara"> //This was an element created out of a component we created.
+
 
 
 

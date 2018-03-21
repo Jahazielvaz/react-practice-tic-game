@@ -1,0 +1,22 @@
+REACT NOTES
+
+SETTING UP ENVIRONMENT
+npm install -g create-react-app
+create-react-app desired-directory-name
+
+IMPORTING THE PROPER FUNCTIONALITY
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css'
+
+NOTE: I think if you import the css file, you might not need to link it to your html page. I'm not sure but I think this is correct.
+
+SCRIPTS: Note that your package.json file contains multiple react scripts that already come included with it. I don't know what they all mean but I'll come up with theories for now.
+
+  START: I believe the start script creates a server for you and opens your page in your browser.
+  BUILD:
+  TEST:
+  EJECT:
+
+INSTALLING LANGUAGE-BABEL USING ATOM: apm install language-babel.

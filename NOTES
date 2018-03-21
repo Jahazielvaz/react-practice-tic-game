@@ -108,3 +108,43 @@ SPECIFYING ATTRIBUTES WITH JSX: You ma also use curly braces to embed a JS expre
     WARNING: Since JSX is closer to JS  than to HTML, React DOM uses camelCase property naming convention instead of HTML attribute names.
       EXAMPLE:
         class becomes className in JSX, and tabindex becomes tabIndex.
+
+
+
+SPECIFYING CHILDREN WITH JSX: JSX tags may contain children
+  EXAMPLE:
+    const element = (
+      <div>
+        <h1>Hello!</h1>
+        <h2>Good to see you here.</h2>
+      </div>
+    )
+
+JSX PREVENTS INJECTION ATTACKS: It is safe to embed user input in JSX. By  default, React DOM escapes any values embedded in JSX before rendering them.
+Thus it ensures that you can never inject anything that's not explicitly written in you application. Everything is converted to a string before being rendered. This helps prevent XSS (cross-site-scripting) attacks.
+
+-----------------------------------------------------------------------------------
+JSX REPRESENTS OBJECTS: Babel compiles JSX down to React.createElement() calls. The following 2 examples are identical
+  EXAMPLE1:
+    const element = (
+      <h1 className = 'greeting'>
+        Hello, world!
+      </h1>
+    );
+
+  EXAMPLE2: Create element example
+    const element = React.createElement(
+      'h1',
+      {className: 'greeting'},
+      'Hello, World!'
+    );
+
+    REACT.CREATEELEMENT(): Performs a few checks to help you write bug-free code but essentially it creates an object like This
+      //NOTE: This structure is simplified
+        const element = {
+        type: 'h1',
+        props: {
+        className: 'greeting',
+        children: 'Hello, world'
+        }
+        }

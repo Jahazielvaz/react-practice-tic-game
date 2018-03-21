@@ -1,13 +1,54 @@
 BABEL'S PURPOSE: This is one of the most popular transpilers, meaning transpilers are in charge of changing code syntax into code that all browsers can read.
   A great example of this is es6 which is the new js format. You can use babel, and it'll transpile your code and turn it into raw es5 which runs in all browsers.
 
-  INSTALLATION:
-    npm install babel-loader babel-core babel-preset-es2015 --save-dev
+  NOTE: I've seen a bunch of different babel codes, but we're going to be using Babel Cli for ease of use.
+-----------------------------------------------------------------------------------
+INSTALLING CLI AND ENV PRESET:
+  npm install --save-dev babel-cli babel-preset-env
 
-    npm install babel-preset-stage-0 --save-dev
+  Create a .babelrc file(NOTE: you can also use your package.json)
+    {
+      "presets": ["env"]
+    }
 
-      Apparently this code is meant to allow you to use es7, but I don't know enough details about it.
+-----------------------------------------------------------------------------------
+.BABELRC: You have to create this file in order for babel to know what it needs to transpile, and after installing your desired preset, you have to add it to this file. You do all this in json format
+  SYNTAX:
+    {
+      "presets": ["env"]
+    }
+-----------------------------------------------------------------------------------
+PRESETS: Presets are like packages of different lines of code babel covers, you have to install these presets via NPM, and then you have to name them inside your .babelrc file.
 
-    npm install babel-preset-react --save-dev
+  ENV: This preset tends to be the default preset people choose, specially for dealing with es6. It contains arrow functions, Classes, etc.
+    INSTALLATION: npm install --save-dev babel-preset-env
+    ENABLING IT: Add env to .babelrc
 
-      I don't know what the react preset does, but I'll find out soon enough.
+
+  POLYFILL: you can use polyfill in order to support new globals such as Promise or new native methods like String.padStart(left-pad). It uses core-js and generator.
+    INSTALLATION: npm install --save-dev babel-polyfill
+    ENABLING IT: Use it by requiring it at the top fo the entry point ot your application or in your bundler config.
+
+  JSX AND FLOW: Babel can convert JSX syntax and strip out type annotations.  NOTE: You can use it together with the babel-sublime package to bring syntax highlighting to a whole new level.
+    INSTALLLATION: npm install --save-dev babel-preset-react
+    ENABLING IT: Add react to .babelrc
+
+-----------------------------------------------------------------------------------
+PLUGGABLE: Babel is built out of plugins. Compose your own transformation pipeline using existing plugins or write your own. Easily use a set of plugins by using or creating a preset. Learn more →
+Create a plugin on the fly with astexplorer.net or use generator-babel-plugin to generate a plugin template.
+  EXAMPLE:
+    // A plugin is just a function
+    export default function ({types: t}) {
+    return {
+      visitor: {
+        Identifier(path) {
+          let name = path.node.name;
+          // reverse the name: JavaScript -> tpircSavaJ
+          path.node.name = name.split('').reverse().join('');
+        }
+      }
+    };
+    }
+
+-----------------------------------------------------------------------------------
+DEBUGGABLE: Source map support so you can debug your compiled code with ease.

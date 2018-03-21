@@ -20,3 +20,38 @@ SCRIPTS: Note that your package.json file contains multiple react scripts that a
   EJECT:
 
 INSTALLING LANGUAGE-BABEL USING ATOM: apm install language-babel.
+REACT: Is a declarative, efficient, and flexible JavaScript JS Library for building  user interfaces.
+
+-----------------------------------------------------------------------------------
+COMPONENTS: React works through components, which are access like this; React.Component. Your components tell react what you want to render, then react will efficiently update and render just the right components when your data changes.
+
+
+  React Component class, or React component type: A componennt takes in parameters, called props, and returns a hierarchy of views to display vie the render method.
+
+  RENDER(): The render method returns a description of what you want to render,
+  and then React takes that description, and renders it to the screen. In particular, render returns a React element, which is a lightweight description of what to render.
+
+-----------------------------------------------------------------------------------
+JSX: Most React developers use this special syntax, which makes it easier to write these structures.
+
+-----------------------------------------------------------------------------------
+REACT.CREATEELEMENT: Note that this would take the place of using JSX, but it looks like most people use JSX instead so keep that in mind.
+    EXAMPLE:
+      return React.createElement('div', {className: 'shopping-list'},
+        React.createElement('h1', This is where h1 children would go),
+        React.createElement('ul', This is where ul children would go)
+      );
+
+-----------------------------------------------------------------------------------
+  JAVASCRIPT EXPRESSIONS: You can put any JS expressions within braces inside JSX. Each React element is a real JS object that you can store in a varible or pass around your program.
+
+  COMPONENT SYNTAX: Each component is encapsulated so it can operate independently, which allows you to build complex UIs, out of simple components.
+    EXAMPLE:
+      <ComponentName />
+
+-----------------------------------------------------------------------------------
+HELLO WORLD EXAMPLE:
+  React.DOM.render(
+    <h1>Hello, World!</h1>,
+    document.getElementById('ElementNameWhenYourCodeWillGo')
+  );

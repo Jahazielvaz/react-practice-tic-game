@@ -98,3 +98,10 @@ ReactDOM.render(
   // )
 
   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//RENDERING AN ELEMENT INTO THE DOM:
+//MEGA SUCCESS!!! Not only did I render it, but I found a way to render, multiple objects into 1 element, by using arrays. LOOK AT THE EXAMPLE BELOW!
+
+  let weather = <h3>'This Weather is crazy. Watch out!'</h3>;
+  ReactDOM.render([topDescription, weather, name], document.getElementById('root'));

@@ -105,3 +105,40 @@ ReactDOM.render(
 
   let weather = <h3>'This Weather is crazy. Watch out!'</h3>;
   ReactDOM.render([topDescription, weather, name], document.getElementById('root'));
+
+
+//COMBINING A FUNCTION WITH JSX STOCK EXAMPLE:
+//SUCCESS: Don't forget to get good at the setting time interval, and all that has to do with time with JS.
+  function tick(){
+    const element = (
+      <div>
+        <h1>Hello, World!</h1>
+        <h2>It is {new Date().toLocaleTimeString()}.</h2>
+      </div>
+    )
+
+    ReactDOM.render(element, document.getElementById('root'));
+  }
+
+  setInterval(tick, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //

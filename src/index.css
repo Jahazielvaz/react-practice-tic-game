@@ -18,3 +18,11 @@
   background: url('https://www.paragon-software.com/wp-content/uploads/2017/09/macbook-pro-ntfs-mac.png');
   min-height: 200px;
 }
+
+.displays button{
+  background: #393;
+}
+
+.displays{
+  text-align: center;
+}

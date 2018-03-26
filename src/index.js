@@ -15,9 +15,9 @@ function people(person, message){
 
 const name = (
   <h1>
-    {people('Teako', 'the smartest')}<br/>
+    {people('Emma', 'a Monster')}<br/>
     {people('Jay', 'super loco')}<br/>
-    {people('Matt', 'a genie out of a bottle')}<br/>
+    {people('Peca', 'a Monkey')}<br/>
     {people('Brandon', 'kinda intense')}
   </h1>
 )
@@ -61,14 +61,11 @@ const bodyTwo = (
 
 
 ReactDOM.render(
-  bodySection,
+  [bodySection, bodyTwo],
   document.getElementById('colors')
 )
 
-ReactDOM.render(
-    bodyTwo,
-    document.getElementById('colors2')
-)
+
 
 //SPECIFYING CHILDREN WITH JSX
 //NOTICE: if a tag is empty, you may close it immediately with />, like XML
@@ -104,7 +101,7 @@ ReactDOM.render(
 //MEGA SUCCESS!!! Not only did I render it, but I found a way to render, multiple objects into 1 element, by using arrays. LOOK AT THE EXAMPLE BELOW!
 
   let weather = <h3>'This Weather is crazy. Watch out!'</h3>;
-  ReactDOM.render([topDescription, weather], document.getElementById('root'));
+  ReactDOM.render(weather, document.getElementById('weather'));
 
 
 //COMBINING A FUNCTION WITH JSX STOCK EXAMPLE:
@@ -140,6 +137,70 @@ ReactDOM.render(
   document.getElementById('mac')
 )
 
+//FUNCTIONAL COMPONENT
+//RULES: Components are always Capitalized.
+//Don't forget to include parenthesis for your return statement, otherwise it's not going to register your return statement
+
+ function MiniDisplay(){
+  return(
+  <div className = 'displays'>
+    <div className = 'display-screen'>
+      KEEP IT UP
+    </div>
+
+    <button>Previous step</button>
+    <button>Current step</button>
+    <button>Future step</button>
+  </div>
+  )
+ }
+
+//Make sure you convert your function to an element, before you pass it in.
+ const miniDisplay = <MiniDisplay />
+
+ ReactDOM.render(
+   miniDisplay,
+   document.getElementById('displays')
+ )
+
+ //CLASS COMPONENT:
+ //NOTICE: Whatever elements you include in your component must be wrapped inside a single element.
+
+class Hotels extends React.Component {
+  render(){
+    return (
+      <div>
+        <h2>LIST OF HOTELS IN THE AREA</h2>
+        <ul>
+          <li>Marriot</li>
+          <li>Ritz Carlton</li>
+          <li>Holiday Inn</li>
+        </ul>
+      </div>
+    )
+  }
+}
+
+const hotels = <Hotels />
+
+ReactDOM.render(
+  hotels,
+  document.getElementById('hotels')
+)
+
+//CLASS COMPONENT WITH A SINGLE prop
+
+class HotelCreator extends React.Component {
+  render(){
+    <div>
+      <h2>HOTELS RENDERED</h2>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+
+  }
+}
 
 
 
@@ -159,4 +220,4 @@ ReactDOM.render(
 
 
 
-  //
+//
